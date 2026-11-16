@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Açaí do Bairro</title>
+
+    <!-- Arquivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🍇 Açaí do Bairro</h1>
+        <p>Monte seu açaí e faça seu pedido!</p>
+    </header>
+
+    <main id="loja">
+
+<!-- COMPLEMENTOS -->
+
+    <section class="card">
+
+        <h2>1. Escolha o tamanho</h2>
+
+        <p class="descricao">
+            Escolha o tamanho do seu açaí.
+        </p>
+
+        <div id="tamanhos" class="grade-tamanhos">
+
+            <!-- Os tamanhos serão carregados pelo JavaScript -->
+
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <h2>2. Escolha seus complementos</h2>
+
+        <p class="descricao">
+            Escolha até 3 complementos grátis.
+            Cada adicional custa R$ 2,00.
+        </p>
+
+        <div id="complementos" class="lista-complementos">
+            <!-- Carregados pelo JavaScript -->
+        </div>
+
+        <div class="resumo-complementos">
+            <span id="quantidade-complementos">
+                0 complementos selecionados
+            </span>
+
+            <strong id="preco-complementos">
+                R$ 0,00
+            </strong>
+        </div>
+        <!-- ADICIONAIS -->
+
+    <section class="card">
+
+        <h2>3. Adicionais</h2>
+
+        <p class="descricao">
+            Deixe seu açaí ainda mais gostoso!
+            Os adicionais são cobrados à parte.
+        </p>
+
+        <div id="adicionais" class="lista-adicionais">
+            <!-- Carregados pelo JavaScript -->
+        </div>
+
+        <div class="resumo-complementos">
+            <span>Valor dos adicionais</span>
+
+            <strong id="preco-adicionais">
+                R$ 0,00
+            </strong>
+        </div>
+
+<!-- OBSERVAÇÕES DO AÇAÍ -->
+
+    <section class="card">
+
+        <h2>4. Observações</h2>
+
+        <p class="descricao">
+            Quer personalizar alguma coisa? Conte pra gente!
+        </p>
+
+        <textarea
+            id="observacoes"
+            class="campo-observacoes"
+            placeholder="Ex: Pouca granola, sem banana, pouco leite condensado..."
+            rows="3"
+            maxlength="300"
+        ></textarea>
+
+        <div class="limite-observacoes">
+            <span>Opcional</span>
+            <span id="contador-observacoes">0/300</span>
+        </div>
+
+    </section> 
+
+<!-- BOTÃO PARA ADICIONAR AO CARRINHO -->
+
+<div class="area-adicionar">
+    <button type="button" id="adicionar-carrinho">
+        + Adicionar ao pedido
+    </button>
+</div>
+
+<!-- CARRINHO DE COMPRAS -->
+
+<section class="card" id="secao-carrinho">
+
+    <h2>5. Seu carrinho</h2>
+
+    <p class="descricao">
+        Confira os açaís que você está pedindo.
+    </p>
+
+    <div id="lista-carrinho">
+
+        <p class="carrinho-vazio">
+            Seu carrinho está vazio.
+        </p>
+
+    </div>
+
+    <div class="resumo-carrinho">
+
+        <span>Total do pedido</span>
+
+        <strong id="total-carrinho">R$ 0,00</strong>
+
+    </div>
+
+</section>
+
+<!-- DADOS DO CLIENTE E RETIRADA -->
+
+<section class="card" id="dados-cliente">
+
+    <h2>6. Dados para retirada</h2>
+
+    <p class="descricao">
+        Informe seus dados para identificarmos seu pedido.
+    </p>
+
+    <div class="campo-cliente">
+
+        <label for="nome-cliente">Seu nome</label>
+
+        <input
+            type="text"
+            id="nome-cliente"
+            placeholder="Digite seu nome"
+            maxlength="80"
+        >
+
+    </div>
+
+    <div class="campo-cliente">
+
+        <label for="telefone-cliente">Telefone</label>
+
+        <input
+            type="tel"
+            id="telefone-cliente"
+            placeholder="(11) 99999-9999"
+            maxlength="15"
+        >
+
+    </div>
+
+    <div class="informacao-retirada">
+
+        <h3>Retirada no local</h3>
+
+        <p id="endereco-retirada">
+            Endereço da loja
+        </p>
+
+    </div>
+
+    <div class="previsao-retirada">
+
+        <span>Tempo estimado para retirada</span>
+
+        <strong id="tempo-estimado">
+            Adicione açaís ao carrinho
+        </strong>
+
+    </div>
+
+</section>
+
+<!-- FORMA DE PAGAMENTO -->
+
+<section class="card" id="forma-pagamento">
+
+    <h2>7. Forma de pagamento</h2>
+
+    <p class="descricao">
+        Como deseja pagar seu pedido?
+    </p>
+
+    <div class="opcoes-pagamento">
+
+        <label class="opcao-pagamento">
+            <input type="radio" name="pagamento" value="Pix">
+            <span>Pix</span>
+        </label>
+
+        <label class="opcao-pagamento">
+            <input type="radio" name="pagamento" value="Dinheiro">
+            <span>Dinheiro</span>
+        </label>
+
+        <label class="opcao-pagamento">
+            <input type="radio" name="pagamento" value="Cartão">
+            <span>Cartão por aproximação (+ R$ 1,00)</span>
+        </label>
+
+    </div>
+
+    <div id="opcao-troco" class="area-troco" hidden>
+
+        <label for="precisa-troco">
+            Precisa de troco?
+        </label>
+
+        <select id="precisa-troco">
+            <option value="">Selecione</option>
+            <option value="Não">Não preciso de troco</option>
+            <option value="Sim">Sim, preciso de troco</option>
+        </select>
+
+        <div id="valor-troco-container" hidden>
+
+            <label for="valor-troco">
+                Troco para quanto?
+            </label>
+
+            <input
+                type="number"
+                id="valor-troco"
+                min="0.01"
+                step="0.01"
+                placeholder="Ex: 50,00"
+            >
+
+        </div>
+
+    </div>
+
+    <div class="resumo-pagamento">
+
+        <div>
+            <span>Subtotal dos produtos</span>
+            <strong id="subtotal-pedido">R$ 0,00</strong>
+        </div>
+
+        <div>
+            <span>Taxa de pagamento</span>
+            <strong id="taxa-pagamento">R$ 0,00</strong>
+        </div>
+
+        <div class="total-final">
+            <span>Total a pagar</span>
+            <strong id="total-final">R$ 0,00</strong>
+        </div>
+
+    </div>
+
+    <button type="button" id="finalizar-pedido">
+        Finalizar pedido pelo WhatsApp
+    </button>
+
+</section>
+
+
+
+
+
+</section>
+
+</section>
+
+</main>
+
+    <footer>
+        <p>© 2026 Açaí do Bairro</p>
+    </footer>
+
+    <!-- Arquivo de funcionalidades -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -12,9 +12,9 @@ const ENDERECO_RETIRADA = "Rua Eurico Freitagas 12 - Riviera Paulista - São Pau
 ============================== */
 
 const tamanhos = [
-    { id: 1, nome: "300 ml", preco: 12.00 },
-    { id: 2, nome: "500 ml", preco: 17.00 },
-    { id: 3, nome: "700 ml", preco: 22.00 }
+    { id: 1, nome: "300 ml", preco: 15.00 },
+    { id: 2, nome: "500 ml", preco: 20.00 },
+    { id: 3, nome: "700 ml", preco: 25.00 }
 ];
 
 /* ==============================
